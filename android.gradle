@@ -1,0 +1,59 @@
+android {
+    compileSdk Versions.compileSdk
+
+    defaultConfig {
+        applicationId "com.devpedrocarvalho.app_drinks"
+        minSdk Versions.minSdk
+        targetSdk Versions.targetSdk
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    buildTypes {
+        release {
+            buildConfigField 'String', 'API_URL', "\"https://apig.azurewebsites.net/\""
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField 'String', 'API_URL', "\"https://apigdev.azurewebsites.net/\""
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    dependencies {
+
+        //AndroidX
+        implementation LibsExternal.androidxCoreKtx
+        implementation LibsExternal.androidxAppcompat
+        implementation LibsExternal.androidMaterial
+        implementation LibsExternal.androidxConstraintlayout
+
+        //Test
+        testImplementation LibsExternal.junit4
+        androidTestImplementation LibsExternal.androidxTestExt
+        testImplementation LibsExternal.mockitokotlin
+        testImplementation LibsExternal.mockitoInline
+        testImplementation LibsExternal.mockitoCore
+        androidTestImplementation LibsExternal.mockitoAndroid
+    }
+
+
+}

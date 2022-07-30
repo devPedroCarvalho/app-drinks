@@ -2,7 +2,6 @@ android {
     compileSdk Versions.compileSdk
 
     defaultConfig {
-        applicationId "com.devpedrocarvalho.app_drinks"
         minSdk Versions.minSdk
         targetSdk Versions.targetSdk
         versionCode Versions.versionCode

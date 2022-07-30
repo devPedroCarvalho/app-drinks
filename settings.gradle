@@ -8,10 +8,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "app-drinks"
 include ':app'
-include ':app:feature_home'
-include ':app:feature_details'
-include ':app:navigation'
-include ':app:logs'
-include ':app:remote'
-include ':app:local_data'
-include ':app:designSystem'
+include ':localData'
+include ':network'
+include ':features'
+include ':features:featureHome'
+include ':navigation'
